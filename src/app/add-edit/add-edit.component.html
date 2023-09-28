@@ -1,0 +1,60 @@
+<div mat-dialog-tittle class="heading">
+    <h1>Employee Form</h1>
+</div>
+
+<form [formGroup]="empForm">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput type="text" placeholder="firstname" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput type="text" placeholder="surname" formControlName="lastName">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="xyz@gmail.com" formControlName="email" type="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="dob">
+                <mat-label>Choose Date of birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dob">
+                <mat-hint>MM/DD/YY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-label>Gender</mat-label>
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+                <mat-radio-button value="other">others</mat-radio-button>
+            </mat-radio-group>
+
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>branch</mat-label>
+                <mat-select formControlName="branch">
+                    <mat-option *ngFor="let val of education" [value]="val">
+                        {{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Company</mat-label>
+                <input matInput type="email" placeholder="S2i" formControlName="company">
+            </mat-form-field>
+        </div>
+        <mat-slide-toggle formControlName="acceptTerms" class="slider">Accept Terms of Service</mat-slide-toggle>
+        <div mat-dialog-action class="action">
+            <button mat-raised-button mat-dialog-close class="cancel">Cancel</button>
+            <button mat-raised-button color="primary" class="save" (click)="onformSubmit()"
+                [disabled]="!empForm.valid">{{actionBtn}}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,47 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loader.isloading|async" color="accent"></mat-progress-bar>
+<p *ngIf="loader.err|async" color=" warn ">page can not find</p>
+
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Crud Application_using</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button (click)="dialogOpen('add',null)">Add user <mat-icon matSuffix>person_add</mat-icon></button>
+  <button routerLink="/login" (click)="logOut()" class="btn btn-danger mx-3">Log out</button>
+</mat-toolbar>
+
+
+<div class="List-employee">
+  <h2>Employee List</h2>
+</div>
+
+<table>
+  <tr class="th">
+    <th>S.NO</th>
+    <th>Id</th>
+    <th>First Name</th>
+    <th width="10%">Last Name</th>
+    <th>Email</th>
+    <th>Date of birth</th>
+    <th>Gender</th>
+    <th width="15%">Branch</th>
+    <th>Company</th>
+    <th width="10%">Action</th>
+  </tr>
+  <tr *ngFor="let user of allusers; let i= index">
+    <td>{{i+1}}</td>
+    <td>{{user.id}}</td>
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.dob |date}}</td>
+    <td>{{user.gender}}</td>
+    <td>{{user.branch}}</td>
+    <td>{{user.company}}</td>
+    <td>
+      <button mat-button color="primary" (click)="dialogOpen('edit', user)"><mat-icon>edit</mat-icon></button>
+      <button mat-button color="warn" (click)="deleteDetails(user.id)"><mat-icon>delete</mat-icon></button>
+    </td>
+  </tr>
+</table>

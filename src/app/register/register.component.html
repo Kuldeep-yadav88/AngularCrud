@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Register here</h1>
+                    <hr>
+                </div>
+                <form [formGroup]="registerForm">
+                    <div class="mb-3">
+                        <label class="form-label">First Name</label>
+                        <input formControlName="firstName" type="firstName" class="form-control" id="firstName"
+                            aria-describedby="firstNameHelp" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Last Name</label>
+                        <input formControlName="lastName" type="lastName" class="form-control" id="lastName"
+                            aria-describedby="lastNameHelp" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email address</label>
+                        <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input formControlName="password" type="password" class="form-control"
+                            id="exampleInputPassword1" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" (click)="onformSubmit()">Register</button>
+                </form>
+                <a routerLink="/login">Already register?click to Login</a>
+            </div>
+        </div>
+    </div>
+</div>

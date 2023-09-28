@@ -1,0 +1,40 @@
+.content{
+    padding-top:10px;
+    background-color: rgb(247, 247, 247);
+
+}
+.heading{
+    margin-top: 10px;
+    text-align:center;
+ }
+.row{
+
+    display: flex;
+    gap: 10px;
+}
+.dob{
+    width:45.70%;
+}
+.action{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 25px;
+    
+}
+.save{
+    position: relative;
+    left: 255px;
+
+}
+.slider{
+    margin-bottom: 50px;
+    margin-left: auto; 
+}
+.cancel{
+    position: relative;
+    right: 25px;
+}
+
+
+
+

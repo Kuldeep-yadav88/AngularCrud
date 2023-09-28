@@ -1,0 +1,37 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  /* td, th {
+    width:5%;
+  } */
+  table, th, td {
+    border: 1px solid black;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }  
+  tr:nth-child(even) {
+    background-color: #D6EEEE;
+    border-collapse: collapse;
+  }
+  .filter{
+  width: 20%;
+  }
+  .List-employee{
+    text-align: center;
+  }
+  
