@@ -43,9 +43,9 @@ export class LoginPageComponent implements OnInit{
         error:()=>{
           console.log('Login failed')
           this.toast.error({detail:"Error Message" ,summary:"Wrong credentials",duration:4000})
-          setTimeout(() => {
-            window.location.reload();
-          }, 1000);
+          // setTimeout(() => {
+          //   window.location.reload();
+          // }, 1000);
 
         }
 

@@ -15,7 +15,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -24,6 +24,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { RegisterComponent } from './register/register.component';
 import { NgToastModule } from 'ng-angular-popup';
 import { DeletePopUpComponent } from './twoStepConformation/delete-pop-up/delete-pop-up.component';
+import {MatDividerModule} from '@angular/material/divider';
+import { AuthInterceptorInterceptor } from './auth-interceptor.interceptor';
+
 
 
 @NgModule({
@@ -56,10 +59,13 @@ import { DeletePopUpComponent } from './twoStepConformation/delete-pop-up/delete
     MatCardModule,
     MatPaginatorModule,
     MatProgressBarModule,
-    NgToastModule
+    NgToastModule,
+    MatDividerModule
    
   ],
-  providers: [],
+  providers: [
+  
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
